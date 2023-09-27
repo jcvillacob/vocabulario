@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let word of words; index as i">
+                <div class="english">
+                    <div class="english__word">
+                        {{ word.Word }}
+                    </div>
+                    <div class="english__example">
+                        <span>inf.</span> {{ word.Lemma }}
+                    </div>
+                    <div class="english__example">
+                        <span>Example:</span> {{ word.Subtitle }}
+                    </div>
+                    <div class="see__more" (click)="seeTranslation()">
+                        See translation
+                    </div>
+                </div>
+                <div class="spanish">
+                    <div class="english__word">
+                        <span>{{ word.PartOfSpeech }}.</span> {{ word.Palabra }}
+                    </div>
+
+                    <div class="english__example">
+                        {{ word.WordDefinition }}
+                    </div>
+
+                    <div class="english__example">
+                        <span>Example:</span> {{ word.Translation }}
+                    </div>
+
+                    <div class="covered" [ngStyle]="{'display': see ? 'none' : 'block'}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
